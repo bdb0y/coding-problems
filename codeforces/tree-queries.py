@@ -29,20 +29,20 @@ for _ in range(n-1):
             graph[node_b] = set()
             graph[node_b].add(node_a)
 
-def DFS(graph, root_node, removed=set(), visited=None, counts=None, count=0):
+def DFS(graph, root_node, removed=set(), visited=None, lengths=None, length=0):
     if visited == None:
         visited = set()
-        counts = set()
+        lengths = set()
     
     visited.add(root_node)
-    counts.add(count)
+    lengths.add(length)
     
-    count += 1
+    length += 1
     
     for adj_node in graph[root_node] - removed - visited:
-        DFS(graph, adj_node, removed, visited, counts, count)
+        DFS(graph, adj_node, removed, visited, lengths, length)
         
-    return visited, counts
+    return visited, lengths
         
 
 for _ in range(q):
