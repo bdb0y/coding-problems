@@ -1,5 +1,7 @@
 import re
 
+# url: https://leetcode.com/problems/regular-expression-matching/
+
 def isMatch(s: str, p: str) -> bool:
         if '**' in p:
             i = p.index('*')
